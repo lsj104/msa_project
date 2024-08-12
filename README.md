@@ -18,3 +18,8 @@
 <img width="521" alt="스크린샷 2024-08-11 오후 10 03 59" src="https://github.com/user-attachments/assets/f4277295-463a-449c-b926-c1c650464354">
 <h2>분산 추적 Zipkin</h2>
 <img width="1440" alt="스크린샷 2024-08-11 오후 10 06 32" src="https://github.com/user-attachments/assets/8afcccfd-cba8-4044-98aa-b76ac512b20c">
+<h2>Cashing</h2>
+<h4>주문 조회 API의 결과를 캐싱 처리하여 60초 동안 메모리에 캐싱된 데이터가 보여지도록 설정</h4>
+<img src="https://github.com/user-attachments/assets/a505db3c-9b2c-4ea0-b574-e53101cc2696">
+<h4>상품추가 API를 호출 할 경우 상품 목록 조회 API의 응답 데이터 캐시가 갱신되도록 구현</h4>
+<img width="304" alt="스크린샷 2024-08-13 오전 1 06 07" src="https://github.com/user-attachments/assets/a460f781-3987-4d8e-9923-dc72d0b5cf4e">
