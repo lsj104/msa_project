@@ -6,6 +6,8 @@ import com.sparta.msa_exam.product.dto.ProductSearchDto;
 import com.sparta.msa_exam.product.entity.Product;
 import com.sparta.msa_exam.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,12 +22,18 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    // 상품 추가 API를 호출할 경우 상품 목록 API의 응답 데이터 캐시가 갱신됨
+
+    // 상품 추가
+    @CachePut(cacheNames = "productCache", key = "#result.product_id")
     public ProductResponseDto createProduct(ProductRequestDto productRequestDto) {
         Product product = Product.createProduct(productRequestDto);
         Product saveProduct = productRepository.save(product);
         return toResponseDto(saveProduct);
     }
 
+    // 상품 목록 조회
+    @Cacheable(cacheNames = "productAllCache", key = "getMethodName()")
     public List<ProductResponseDto> getProducts(ProductSearchDto searchDto) {
         List<Product> products;
         if (searchDto.getName() != null && !searchDto.getName().isEmpty()) {

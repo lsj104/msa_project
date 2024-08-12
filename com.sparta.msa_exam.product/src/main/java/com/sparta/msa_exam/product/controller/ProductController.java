@@ -25,11 +25,13 @@ public class ProductController {
     private String serverPort;
 
 
+    // 상품 추가
     @PostMapping
     public ProductResponseDto createProduct(@RequestBody ProductRequestDto productRequestDto) {
         return productService.createProduct(productRequestDto);
     }
 
+    // 상품 목록 조회
     @GetMapping
     public List<ProductResponseDto> getProducts(ProductSearchDto searchDto) {
         return productService.getProducts(searchDto);

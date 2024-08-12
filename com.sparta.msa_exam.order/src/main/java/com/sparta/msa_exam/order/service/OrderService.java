@@ -9,6 +9,7 @@ import com.sparta.msa_exam.order.entity.OrderItem;
 import com.sparta.msa_exam.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,6 +70,8 @@ public class OrderService {
         return toResponseDto(updatedOrder);
     }
 
+    // 주문 조회 API결과를 캐싱 처리하여 60초동안 메모리에 캐싱된 데이터가 보여지도록 설정
+    @Cacheable(cacheNames = "orderCache", key = "args[0]")
     @Transactional(readOnly = true)
     public OrderResponseDto getOrderById(Long orderId) {
         Order order = orderRepository.findById(orderId)
