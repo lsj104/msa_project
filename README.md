@@ -1,6 +1,8 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=6495ED&fontAlign=50&fontAlignY=30&text=MSA%20PROJECT&descAlign=70&descAlignY=55&height=200&fontSize=40&fontColor=ffffff)
 <h2> MSA architecture<h2>
 <img width="407"src="https://github.com/user-attachments/assets/49129b4f-cbf2-41d8-8c45-b3c982c767c1"></img>
+<br><br>
+<img width="233" alt="스크린샷 2024-08-13 오전 1 14 43" src="https://github.com/user-attachments/assets/2016d847-6429-4e96-9655-cdf575648b33">
 <h2>API</h2>
 <h4>1. 상품 추가 POST /products </h4>
 <img width="521" alt="스크린샷 2024-08-11 오후 9 48 52" src="https://github.com/user-attachments/assets/b211327d-dc52-40f6-9ced-bd6d6a32373d">
@@ -20,6 +22,6 @@
 <img width="1440" alt="스크린샷 2024-08-11 오후 10 06 32" src="https://github.com/user-attachments/assets/8afcccfd-cba8-4044-98aa-b76ac512b20c">
 <h2>Cashing</h2>
 <h4>주문 조회 API의 결과를 캐싱 처리하여 60초 동안 메모리에 캐싱된 데이터가 보여지도록 설정</h4>
-<img src="https://github.com/user-attachments/assets/a505db3c-9b2c-4ea0-b574-e53101cc2696">
+<img width="304" src="https://github.com/user-attachments/assets/a505db3c-9b2c-4ea0-b574-e53101cc2696">
 <h4>상품추가 API를 호출 할 경우 상품 목록 조회 API의 응답 데이터 캐시가 갱신되도록 구현</h4>
 <img width="304" alt="스크린샷 2024-08-13 오전 1 06 07" src="https://github.com/user-attachments/assets/a460f781-3987-4d8e-9923-dc72d0b5cf4e">
