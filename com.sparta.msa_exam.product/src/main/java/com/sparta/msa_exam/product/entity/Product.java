@@ -18,11 +18,10 @@ public class Product {
     private String name;
     private Integer supply_price;
 
-
-    public static Product createProduct(ProductRequestDto productRequestDto) {
+    public static Product createProduct(String name, Integer supplyPrice) {
         return Product.builder()
-                .name(productRequestDto.getName())
-                .supply_price(productRequestDto.getSupply_price())
+                .name(name)
+                .supply_price(supplyPrice)
                 .build();
     }
 }

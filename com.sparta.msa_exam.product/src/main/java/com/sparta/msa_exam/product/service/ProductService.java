@@ -27,7 +27,10 @@ public class ProductService {
     // 상품 추가
     @CachePut(cacheNames = "productCache", key = "#result.product_id")
     public ProductResponseDto createProduct(ProductRequestDto productRequestDto) {
-        Product product = Product.createProduct(productRequestDto);
+        Product product = Product.createProduct(
+                productRequestDto.getName(),
+                productRequestDto.getSupply_price()
+        );
         Product saveProduct = productRepository.save(product);
         return toResponseDto(saveProduct);
     }
